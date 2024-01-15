@@ -10,7 +10,7 @@ public class Month {
     public Month(int monthNumber){
         setMonthNumber(monthNumber);
     }
-    public Month(String month){
+    public Month(String month){//Sets monthNumber using a string.
          month = month.toLowerCase();
          switch (month){
              case "february" -> monthNumber = 2;
@@ -27,15 +27,14 @@ public class Month {
              default -> monthNumber = 1;
          }
     }
-    public void setMonthNumber(int monthNumber){
+    public void setMonthNumber(int monthNumber){//sets this.monthNumber to monthNumber if it is between 12 and 1 inclusive. If not, it sets monthNumber to 1.
         this.monthNumber = monthNumber > 12 || monthNumber < 1 ? 1 : monthNumber;
     }
 
     public int getMonthNumber() {
         return monthNumber;
     }
-    public String getMonthName(){
-        String monthName;
+    public String getMonthName(){//converts monthNumber into a string and returns that string.
         switch (monthNumber){
             case 1 -> {
                 return "January";
@@ -85,12 +84,12 @@ public class Month {
     }
 
     public boolean equals(Month month){
-        return month.monthNumber == monthNumber;
+        return month.monthNumber == this.monthNumber;//Checks if the monthNumber of this is equal to the monthNumber of the argument Month.
     }
     public boolean greaterThan(Month month){
-        return monthNumber > month.monthNumber;
+        return monthNumber > month.monthNumber;//Checks if the monthNumber of this is greater than the monthNumber of the argument Month.
     }
     public boolean lessThan(Month month){
-        return monthNumber < month.monthNumber;
+        return monthNumber < month.monthNumber;//Checks if the monthNumber of this is less than the monthNumber of the argument Month.
     }
 }
